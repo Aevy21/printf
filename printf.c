@@ -41,10 +41,9 @@ int _printf(const char *format, ...)
 			else if (*format == '%')
 			{
 				write(1, format,1);
-				print_char++;					}
-			format++;
-		}
+				print_char++;
+			}
 		va_end(fmt_spec);
-
+	}
 		return (print_char);
 	}
