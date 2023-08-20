@@ -8,42 +8,49 @@
  */
 int _printf(const char *format, ...)
 {
-	int print_char = 0;
-	va_list fmt_spec;
-	va_start(fmt_spec ,format);
-
-	if(format == NULL)
+	if (format == NULL)
 	{
 		return (-1);
 	}
-	while(*format)
+	char c;
+	char *str;
+	int i = 0;
+	va_list args;
+
+	va_start(args, format);
+
+	for (; format[i] != '\0'; i++)
 	{
-		if(*format != '%')
+		if (format[i] == '%')
 		{
-			write(1,format,1);
-			print_char++;
+			i++;
+
+			if (format[i] == 'c')
+			{
+				char c = (char)va_arg(args, int);
+
+				putchar(c);
+			}
+			else if (format[i] == 's')
+			{
+				char *str = va_arg(args, char *);
+
+				while (*str != '\0')
+				{
+
+					putchar(*str);
+					str++;
+				}
+			}
+			else
+			{
+				putchar('%');
+			}
 		}
 		else
 		{
-			format++;
-			}
-			if(*format == 'c')
-			{
-				char c =va_arg(fmt_spec,int);
-				write(1,&c ,1);
-				print_char++;
-			}
-			if(*format == 's')
-			{
-				char *str = va_arg(fmt_spec,char*);		
-				while(*str != '\0')				write(1, str, strlen(str));
-			}
-			else if (*format == '%')
-			{
-				write(1, format,1);
-				print_char++;
-			}
-		va_end(fmt_spec);
+			putchar(format[i]);
+		}
 	}
-		return (print_char);
-	}
+	va_end(args);
+}
