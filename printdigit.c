@@ -18,10 +18,10 @@ int print_integer(va_list fmt_specs)
 	}
 	if (num / 10 != 0)
 	{
-		charD += print_integer(num / 10);
+		charD++	
 	}
 
-	_putchar('0' + (num % 10));
+	_putchar('0');
 	charD++;
 
 	return (charD);
