@@ -10,11 +10,11 @@ int print_char(va_list fmt_specs)
 {
 	char *str = va_arg(fmt_specs, char *);
 	int charC = 0;
-	int j;
+	int n = 0;
 
-	for (int j = 0; str[j] != '\0'; j++)
+	for (; str[n] != '\0'; n++)
 	{
-		__putchar(str[j]);
+		_putchar(str[n]);
 		charC++;
 
 
