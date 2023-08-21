@@ -8,29 +8,29 @@
 int (*select_spec(char ch))(va_list)
 {
 
-        static int (*print_func)(va_list) = NULL;
+	static int (*print_func)(va_list);
 
-        if (ch == 's')
-        {
-                print_func = &print_string;
-        }
-        else if (ch == 'c')
-        {
-                print_func = &print_char;
-        }
-        else if (ch == '%')
-        {
-                print_func = &print_percent;
-        }
-        else if (ch == 'd' || ch == 'i')
-        {
-                print_func = &print_integer;
-        }
-        else
-        {
-                print_func = NULL;
-        }
+	if (ch == 's')
+	{
+		print_func = &print_string;
+	}
+	else if (ch == 'c')
+	{
+		print_func = &print_char;
+	}
+	else if (ch == '%')
+	{
+		print_func = &print_percent;
+	}
+	else if (ch == 'd' || ch == 'i')
+	{
+		print_func = &print_integer;
+	}
+	else
+	{
+		print_func = NULL;
+	}
 
-        return print_func;
+	return (print_func);
 }
 
