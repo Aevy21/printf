@@ -12,11 +12,13 @@ int _putchar(char c);
 int puts(const char *string);
 
 int _printf(const char *format, ...);
-
-
-
-
-
-
+int print_char(va_list fmt_specs);
+int print_char(va_list fmt_specs);
+int print_percent(va_list fmt_specs);
+int (*select_spec(char ch))(va_list)
+;
+int _printf(const char *format, ...)
+;
+int print_integer(va_list fmt_specs);
 
 #endif 
