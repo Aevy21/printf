@@ -18,16 +18,13 @@ int print_digit(va_list fmt_specs)
 		num = -num;
 		charD++;
 	}
-	do
-	{
-		digits[num_digits] = num % 10;
-		num /= 10;
-		num_digits++;
-	} while (num > 0);
-	for (; i < digits[i]; i++)
-	{
-		_putchar('0');
-		charD++;
+  if(num / 10 != 0)
+   {
+		charD++	
 	}
-	return charD;
-}
+
+	_putchar('0');
+	charD++;
+
+	return (charD);
+=
