@@ -56,3 +56,5 @@ Handle the field width for non-custom conversion specifiers.
 R: prints the rot13'ed string
 
 15- All the above options work well together.
+
+Sipho Skhosana and Avumile Ndlovu compiled README.md
