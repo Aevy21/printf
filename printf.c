@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			spec = format[i + 1];
-			counter += select(spec, fmt_specs);
+			counter = counter + (*select_spec(spec))(fmt_specs);
 			i++;
 		}
 		else
@@ -33,4 +33,7 @@ int _printf(const char *format, ...)
 		i++;
 	}
 
+	va_end(fmt_specs);
 
+	return (counter);
+}

@@ -1,23 +1,25 @@
 #include "main.h"
-
 /**
- * print_integer - Recursive function to format and print an integer.
- *@fmt_specs: A va_list containing the string to print.
+ * print_digit - Iterative function to format and print an integer.
+ * @fmt_specs: A va_list containing the string to print.
  * Return: The number of characters printed.
  */
-int print_integer(va_list fmt_specs)
+int print_digit(va_list fmt_specs)
 {
 	int charD = 0;
 	int num;
-
+	int digits[10];
+	int num_digits = 0;
+	int i = num_digits - 1; 
+	num = va_arg(fmt_specs, int);
 	if (num < 0)
 	{
 		_putchar('-');
 		num = -num;
 		charD++;
 	}
-	if (num / 10 != 0)
-	{
+  if(num / 10 != 0)
+   {
 		charD++	
 	}
 
@@ -25,4 +27,4 @@ int print_integer(va_list fmt_specs)
 	charD++;
 
 	return (charD);
-}
+=
