@@ -22,7 +22,6 @@ int print_integer(va_list fmt_specs)
 	{
 		charD += print_integer(fmt_specs);
 	}
-
 	_putchar('0' + (num % 10));
 	charD++;
 	return (charD);
