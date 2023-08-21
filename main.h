@@ -19,7 +19,7 @@ int (*select_spec(char ch))(va_list)
 ;
 int _printf(const char *format, ...)
 ;
-int print_integer(va_list fmt_specs);
+int print_digit(va_list fmt_specs);
 
 #endif
 

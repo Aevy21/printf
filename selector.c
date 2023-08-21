@@ -24,7 +24,7 @@ int (*select_spec(char ch))(va_list)
 	}
 	else if (ch == 'd' || ch == 'i')
 	{
-		print_func = &print_integer;
+		print_func = &print_digit;
 	}
 	else
 	{
