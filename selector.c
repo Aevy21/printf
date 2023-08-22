@@ -28,7 +28,7 @@ int (*select_spec(char ch))(va_list)
 	}
 	else
 	{
-		print_func = NULL;
+		print_func = &print_per;
 	}
 
 	return (print_func);
