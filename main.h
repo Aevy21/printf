@@ -19,8 +19,9 @@ int (*select_spec(char ch))(va_list)
 int _printf(const char *format, ...)
 ;
 int print_digit(va_list fmt_specs);
-int print_per(__attribute__ ((unused))va_list __attribute__ ((unused))fmt_specs);
+int print_per(va_list __attribute__ ((unused))fmt_specs);
 int print_percent(va_list __attribute__ ((unused))fmt_specs);
+int print_digits(va_list fmt_specs);
 
 #endif
 
