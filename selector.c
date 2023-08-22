@@ -26,6 +26,10 @@ int (*select_spec(char ch))(va_list)
 	{
 		print_func = &print_digit;
 	}
+	else if (ch == 'r')
+	{
+		print_func = &print_cus;
+	}
 	else
 	{
 		print_func = &print_per;
