@@ -34,6 +34,10 @@ int (*select_spec(char ch))(va_list)
 	{
 		print_func = &printf_oct;
 	}
+	else if (ch == 'x' || ch == 'X')
+	{
+		print_func = &print_hex;
+	}
 	else
 	{
 		print_func = &print_per;
