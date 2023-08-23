@@ -23,6 +23,6 @@ int print_per(va_list __attribute__ ((unused))fmt_specs);
 int print_percent(va_list __attribute__ ((unused))fmt_specs);
 int print_digits(va_list fmt_specs);
 int print_cus(va_list fmt_specs);
-
+int printf_oct(va_list fmt_specs);
 #endif
 

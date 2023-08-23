@@ -30,6 +30,10 @@ int (*select_spec(char ch))(va_list)
 	{
 		print_func = &print_cus;
 	}
+	else if (ch == 'o')
+	{
+		print_func = &printf_oct;
+	}
 	else
 	{
 		print_func = &print_per;
