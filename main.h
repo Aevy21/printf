@@ -23,15 +23,10 @@ int print_per(va_list __attribute__ ((unused))fmt_specs);
 int print_percent(va_list __attribute__ ((unused))fmt_specs);
 int print_digits(va_list fmt_specs);
 int print_cus(va_list fmt_specs);
-<<<<<<< HEAD
 int printf_oct(va_list fmt_specs);
 int print_hex(va_list fmt_specs);
 int _x(unsigned int num, int print, int uppercase);
 int print_unsigned(va_list fmt_specs);
 
-=======
-int print_hex(va_list fmt_specs);
-int print_octal(va_list fmt_specs);
->>>>>>> 187ed7ee2a518f39c8c5f303257ea1bc1c832af7
 #endif
 
