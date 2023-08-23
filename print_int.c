@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_digit - function that prints unsigned number
+ * print_digits- function that prints unsigned number
  * @fmt_specs: unsigned n
  * Descriptions: prints unsigned number with putchar
  * Return: size the output
  */
-int print_digit(va_list fmt_specs)
+int print_digits(va_list fmt_specs)
 {
 	unsigned int len, base_ten, digit, num;
 	int count = 0;

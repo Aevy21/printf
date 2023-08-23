@@ -20,7 +20,7 @@ int print_char(va_list fmt_specs)
  *@fmt_specs:stringto be formatted
  * Return: 1.
  */
-int print_per(__attribute__ ((unused))va_list __attribute__ ((unused))fmt_specs)
+int print_per(va_list __attribute__ ((unused))fmt_specs)
 {
 	_putchar('%');
 
