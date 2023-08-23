@@ -10,7 +10,7 @@ int printf_oct(va_list fmt_specs)
 	int i;
 	int *array;
 	int counter = 0;
-	unsigned int num = va_arg(fmt_specs ,unsigned int);
+	unsigned int num = va_arg(fmt_specs, unsigned int);
 	unsigned int temp = num;
 
 	while (num / 8 != 0)

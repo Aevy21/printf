@@ -7,7 +7,8 @@
  */
 int (*select_spec(char ch))(va_list)
 {
-	switch (ch) {
+	switch (ch)
+	{
 		case 's':
 			return (&print_string);
 		case 'c':
@@ -25,7 +26,7 @@ int (*select_spec(char ch))(va_list)
 		case 'X':
 			return (&print_hex);
 		case 'u':
-			return (&print_unsigned);
+			return (&print_u);
 		default:
 			return (&print_per);
 	}

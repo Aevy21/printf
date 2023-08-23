@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_unsigned - a function that prints unsigned int to stdout
+ * print_u - a function that prints unsigned int to stdout
  * @fmt_specs: list being passed
  * Return: char count
  */
-int print_unsigned(va_list fmt_specs)
+int print_u(va_list fmt_specs)
 {
 	unsigned int n;
 	int expo = 1;
