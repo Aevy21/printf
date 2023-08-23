@@ -38,6 +38,10 @@ int (*select_spec(char ch))(va_list)
 	{
 		print_func = &print_hex;
 	}
+	else if (ch == 'u')
+	{
+		print_func = &print_unsigned;
+	}
 	else
 	{
 		print_func = &print_per;
