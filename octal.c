@@ -1,43 +1,35 @@
 #include "main.h"
+
 /**
- * print_octal - unsigned int argument is converted to unsigned octal
- * @fmt_specs: unsigned to be converted
- * Descriptions: prints unsigned octal
- * Return: size the output
+ * printf_oct - prints an octal number.
+ * @fmt_specs : arguments.
+ * Return: counter.
  */
-int print_octal(va_list fmt_specs)
+int printf_oct(va_list fmt_specs)
 {
-	unsigned int len, base_eit, j, digit, n, num;
-	int count = 0;
+	int i;
+	int *array;
+	int counter = 0;
+	unsigned int num = va_arg(fmt_specs ,unsigned int);
+	unsigned int temp = num;
 
-	n = va_arg(fmt_specs, unsigned int);
-
-	if (n != 0)
+	while (num / 8 != 0)
 	{
-		num = n;
-		len = 0;
-		while (num != 0)
-		{
-			num /= 8;
-			len++;
-		}
-		base_eit = 1;
+		num /= 8;
+		counter++;
+	}
+	counter++;
+	array = malloc(counter * sizeof(int));
 
-		for (j = 1; j <= len - 1; j++)
-			base_eit *= 8;
-		for (j = 1; j <= len; j++)
-		{
-			digit = n / base_eit;
-			_putchar(digit + '0');
-			count++;
-			n -= digit * base_eit;
-			base_eit /= 8;
-		}
-	}
-	else
+	for (i = 0; i < counter; i++)
 	{
-		_putchar('0');
-		return (1);
+		array[i] = temp % 8;
+		temp /= 8;
 	}
-	return (count);
+	for (i = counter - 1; i >= 0; i--)
+	{
+		_putchar(array[i] + '0');
+	}
+	free(array);
+	return (counter);
 }

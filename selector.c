@@ -9,20 +9,24 @@ int (*select_spec(char ch))(va_list)
 {
 	switch (ch) {
 		case 's':
-			return &print_string;
+			return (&print_string);
 		case 'c':
-			return &print_char;
+			return (&print_char);
 		case '%':
-			return &print_percent;
+			return (&print_percent);
 		case 'd':
 		case 'i':
-			return &print_digit;
+			return (&print_digit);
 		case 'r':
-			return &print_cus;
+			return (&print_cus);
 		case 'o':
-			return &print_octal;
+			return (&printf_oct);
+		case 'x':
+		case 'X':
+			return (&print_hex);
+		case 'u':
+			return (&print_unsigned);
 		default:
-			return &print_per;
+			return (&print_per);
 	}
 }
-
