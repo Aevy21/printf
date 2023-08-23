@@ -7,21 +7,24 @@
  */
 int (*select_spec(char ch))(va_list)
 {
-
-	static int (*print_func)(va_list);
-
-	if (ch == 's')
-	{
-		print_func = &print_string;
+	switch (ch) {
+		case 's':
+			return &print_string;
+		case 'c':
+			return &print_char;
+		case '%':
+			return &print_percent;
+		case 'd':
+		case 'i':
+			return &print_digit;
+		case 'r':
+			return &print_cus;
+		case 'o':
+			return &print_octal;
+		default:
+			return &print_per;
 	}
-	else if (ch == 'c')
-	{
-		print_func = &print_char;
-	}
-	else if (ch == '%')
-	{
-		print_func = &print_percent;
-	}
+<<<<<<< HEAD
 	else if (ch == 'd' || ch == 'i')
 	{
 		print_func = &print_digit;
@@ -48,5 +51,7 @@ int (*select_spec(char ch))(va_list)
 	}
 
 	return (print_func);
+=======
+>>>>>>> 187ed7ee2a518f39c8c5f303257ea1bc1c832af7
 }
 

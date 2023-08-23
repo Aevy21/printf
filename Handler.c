@@ -16,7 +16,7 @@ int print_cus(va_list fmt_specs)
 		if (current_char == '\0')
 			return (-1);
 
-		if (current_char == '%' && va_arg(fmt_specs, int) == 'r')
+		if (current_char == '%' || current_char  == 'r')
 		{
 			countr += _putchar('%');
 
