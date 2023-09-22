@@ -11,11 +11,12 @@ int print_address(va_list fmt_specs)
 	unsigned long addr;
 	int i = num_digits - 1;
 	int j = 0;
-	char buffer[18];
-	int len =2;
+	int len = 0;
+	char *buffer;
 	unsigned long temp;
 	/* Fetch the pointer argument using va_arg */
 	void *ptr = va_arg(fmt_specs, void *);
+
 
 	hex = "0123456789abcdef";
 	addr = (unsigned long)ptr;
@@ -26,13 +27,21 @@ int print_address(va_list fmt_specs)
 		temp >>= 4;
 	}
 	while (temp != 0);
+	len = 2 + num_digits;
+
+	buffer = (char *)malloc(len + 1);
+		if (buffer == NULL)
+		{
+			return -1;
+		}
 
 	buffer[0] = '0';
 	buffer[1] = 'x';	
 	/* Fill the buffer with hexadecimal digits */
 	for (; i >= 0; i--)
 	{
-		buffer[len++] = hex[(addr >> (i * 4)) & 0xF];
+	buffer[i] = hex[addr & 0xF];
+        addr >>= 4;
 	}
 
 	/* Null-terminate the buffer */
@@ -43,6 +52,7 @@ int print_address(va_list fmt_specs)
 	{
 		_putchar(buffer[j]);
 	}
+	free(buffer);
 	return (len);
 }
 
